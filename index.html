@@ -446,31 +446,40 @@ canvas{
 </div>
 
 <script>
-function updateCountdown(){
+function updateCountdown() {
   const target = new Date("2027-01-01T00:00:00+07:00").getTime();
   const now = Date.now();
-  const distance = target-now;
+  const distance = target - now;
 
-  if(distance <= 0){
+  if (distance <= 0) {
     document.querySelector(".countdown").innerHTML =
-      "<h2 style='grid-column:1/-1'>🎉 រីករាយថ្ងៃកំណើត! 🎂</h2>";
+      "<h2>🎉 រីករាយថ្ងៃកំណើត! 🎂</h2>";
     return;
   }
 
   document.getElementById("days").textContent =
-    Math.floor(distance/(1000*60*60*24));
+    Math.floor(distance / 86400000);
 
   document.getElementById("hours").textContent =
-    Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    Math.floor((distance % 86400000) / 3600000);
 
   document.getElementById("minutes").textContent =
-    Math.floor((distance%(1000*60*60))/(1000*60));
+    Math.floor((distance % 3600000) / 60000);
 
   document.getElementById("seconds").textContent =
-    Math.floor((distance%(1000*60))/1000);
+    Math.floor((distance % 60000) / 1000);
 }
-updateCountdown();
-setInterval(updateCountdown,1000);
 
-function showWish(){
-  const wish=document.getElementById("wish").value.trim();
+function showWish() {
+  const wish = document.getElementById("wish").value.trim();
+
+  if (!wish) {
+    alert("សូមសរសេរពាក្យជូនពរជាមុន!");
+    return;
+  }
+
+  alert("🎉 ពាក្យជូនពរ៖ " + wish);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
