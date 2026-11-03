@@ -1,24 +1,23 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Birthday Surprise 2027</title>
+<title>My Birthday Surprise 2027 🎂</title>
 
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:
-    radial-gradient(ellipse at 50% 0%,#25344d 0%,#101827 35%,#05070d 75%);
+  font-family:Arial,"Noto Sans Khmer",sans-serif;
+  background:radial-gradient(ellipse at top,#25344d,#101827 40%,#05070d 85%);
   color:white;
   text-align:center;
   overflow-x:hidden;
 }
 .container{
-  width:100%;
   max-width:850px;
   margin:auto;
   padding:35px 18px 60px;
@@ -27,24 +26,24 @@ body{
 }
 .top{
   color:#e4c36d;
-  letter-spacing:5px;
+  letter-spacing:4px;
   font-size:12px;
 }
 h1{
   color:#f6d77b;
-  font-size:clamp(35px,8vw,65px);
-  margin:20px 0 5px;
+  font-size:clamp(34px,8vw,65px);
+  margin:20px 0 8px;
   text-shadow:0 0 25px #b58a35;
 }
 .subtitle{
   color:#fff;
   font-size:20px;
-  letter-spacing:5px;
+  letter-spacing:3px;
 }
 .date{
   color:#f6d77b;
   font-size:21px;
-  letter-spacing:4px;
+  letter-spacing:3px;
   margin:25px 0;
 }
 .card{
@@ -59,7 +58,9 @@ h1{
 h2{
   color:#f6d77b;
   margin-top:5px;
+  font-size:21px;
 }
+p{line-height:1.8}
 .countdown{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -140,15 +141,16 @@ h2{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:25px 0 10px;
   min-height:300px;
-  perspective:900px;
+  padding:20px 0;
+  overflow:hidden;
 }
 .cake{
   position:relative;
-  width:270px;
-  height:245px;
-  filter:drop-shadow(0 20px 18px #0009);
+  width:280px;
+  height:250px;
+  flex-shrink:0;
+  filter:drop-shadow(0 15px 15px #0009);
   animation:cakeFloat 3s ease-in-out infinite;
 }
 @keyframes cakeFloat{
@@ -157,137 +159,144 @@ h2{
 }
 .plate{
   position:absolute;
-  bottom:0;
+  bottom:5px;
   left:0;
-  width:270px;
-  height:20px;
+  width:280px;
+  height:22px;
   border-radius:50%;
-  background:linear-gradient(90deg,#80602c,#f7d982,#9b7537);
-  box-shadow:0 8px 20px #0008;
+  background:linear-gradient(#fff2b7,#b58a35,#f6d77b);
+  box-shadow:0 8px 15px #0008;
 }
-.bottom-body{
+.lower{
   position:absolute;
-  bottom:15px;
-  left:15px;
+  bottom:22px;
+  left:20px;
   width:240px;
-  height:105px;
+  height:95px;
   border-radius:12px 12px 22px 22px;
-  background:linear-gradient(90deg,#171717,#353535 50%,#111);
-  border:2px solid #c6a04f;
+  background:linear-gradient(90deg,#d7d7d7,#fff 48%,#d8d8d8);
+  border:3px solid #d5b45c;
+  overflow:hidden;
 }
-.bottom-top{
+.lower-top{
   position:absolute;
-  bottom:105px;
-  left:15px;
+  bottom:100px;
+  left:20px;
   width:240px;
-  height:35px;
+  height:34px;
   border-radius:50%;
-  background:linear-gradient(180deg,#fff,#ddd);
-  border:2px solid #d5b76c;
+  background:#fff;
+  border:3px solid #d5b45c;
   z-index:2;
 }
-.top-body{
+.lower-drip{
   position:absolute;
-  bottom:120px;
-  left:50px;
-  width:170px;
-  height:80px;
-  border-radius:10px 10px 17px 17px;
-  background:linear-gradient(90deg,#e5e5e5,#fff 50%,#d8d8d8);
-  border:2px solid #d5b76c;
-}
-.top-top{
-  position:absolute;
-  bottom:185px;
-  left:50px;
-  width:170px;
-  height:30px;
-  border-radius:50%;
-  background:linear-gradient(180deg,#fff,#e8e8e8);
-  border:2px solid #d5b76c;
+  bottom:91px;
+  left:35px;
+  width:210px;
+  height:20px;
   z-index:3;
-}
-.gold-band{
-  position:absolute;
-  bottom:45px;
-  left:16px;
-  width:238px;
-  height:8px;
-  background:linear-gradient(90deg,#92702e,#f6d77b,#92702e);
-  z-index:4;
-}
-.gold-band.small{
-  bottom:140px;
-  left:51px;
-  width:168px;
-}
-.cream{
-  position:absolute;
-  width:22px;
-  height:25px;
-  background:#fff;
-  border-radius:0 0 50% 50%;
-  top:0;
-  left:20px;
-}
-.cream:before,.cream:after{
-  content:"";
-  position:absolute;
-  width:22px;
-  height:25px;
-  background:#fff;
-  border-radius:0 0 50% 50%;
-  top:0;
-}
-.cream:before{left:35px}
-.cream:after{left:70px}
-.cream.c2{left:105px}
-.cream.c3{left:175px}
-.cream.c4{left:215px}
-.top-cream{
-  position:absolute;
-  bottom:172px;
-  left:50px;
-  width:170px;
-  height:17px;
-  z-index:5;
   display:flex;
   justify-content:space-around;
 }
-.top-cream span{
-  width:22px;
-  height:25px;
+.lower-drip span{
+  width:18px;
+  height:22px;
+  background:white;
+  border-radius:0 0 50% 50%;
+}
+.lower-band{
+  position:absolute;
+  bottom:48px;
+  left:21px;
+  width:238px;
+  height:8px;
+  background:linear-gradient(90deg,#9c7025,#ffe49a,#9c7025);
+  z-index:4;
+}
+.upper{
+  position:absolute;
+  bottom:116px;
+  left:57px;
+  width:166px;
+  height:68px;
+  border-radius:10px 10px 16px 16px;
+  background:linear-gradient(90deg,#080808,#292929,#080808);
+  border:3px solid #d5b45c;
+  z-index:4;
+}
+.upper-top{
+  position:absolute;
+  bottom:169px;
+  left:57px;
+  width:166px;
+  height:30px;
+  border-radius:50%;
+  background:#252525;
+  border:3px solid #d5b45c;
+  z-index:5;
+}
+.upper-drip{
+  position:absolute;
+  bottom:162px;
+  left:70px;
+  width:140px;
+  height:18px;
+  display:flex;
+  justify-content:space-around;
+  z-index:6;
+}
+.upper-drip span{
+  width:17px;
+  height:20px;
   background:#fff;
   border-radius:0 0 50% 50%;
 }
+.upper-band{
+  position:absolute;
+  bottom:138px;
+  left:59px;
+  width:162px;
+  height:7px;
+  background:linear-gradient(90deg,#9c7025,#ffe49a,#9c7025);
+  z-index:6;
+}
 .berry{
   position:absolute;
-  bottom:195px;
-  left:115px;
-  width:16px;
-  height:16px;
-  border-radius:50%;
-  background:#a71925;
-  box-shadow:22px 4px 0 #a71925,-22px 4px 0 #a71925;
-  z-index:6;
+  bottom:188px;
+  left:130px;
+  width:18px;
+  height:18px;
+  border-radius:50% 50% 45% 45%;
+  background:#e32636;
+  z-index:7;
+  box-shadow:-24px 5px 0 #e32636,24px 5px 0 #e32636;
+}
+.berry:after{
+  content:"";
+  position:absolute;
+  width:8px;
+  height:7px;
+  background:#4b9b43;
+  top:-5px;
+  left:5px;
+  border-radius:100% 0;
 }
 .cake-label{
   position:absolute;
-  bottom:72px;
-  left:0;
-  width:100%;
-  z-index:6;
-  color:#f6d77b;
-  font-size:14px;
+  bottom:55px;
+  left:20px;
+  width:240px;
+  z-index:7;
+  color:#b58a35;
+  font-size:13px;
   font-weight:bold;
-  letter-spacing:2px;
-  text-shadow:0 2px 4px #000;
+  letter-spacing:1px;
 }
 .cake-caption{
   color:#e5c778;
-  font-size:13px;
-  letter-spacing:2px;
-  margin-top:5px;
+  font-size:14px;
+  margin-top:0;
 }
 .qr{
   display:block;
@@ -310,7 +319,7 @@ textarea{
   font-size:15px;
   resize:vertical;
 }
-textarea::placeholder{color:#999}
+textarea::placeholder{color:#aaa}
 button{
   border:0;
   padding:13px 25px;
@@ -329,7 +338,7 @@ button{
   margin-top:18px;
 }
 footer{
-  color:#888;
+  color:#aaa;
   font-size:12px;
   margin-top:40px;
 }
@@ -344,8 +353,8 @@ canvas{
 @media(max-width:450px){
   .countdown{gap:5px}
   .time{padding:12px 2px}
-  .cake{transform:scale(.88)}
-  .cake-scene{min-height:270px}
+  .cake{transform:scale(.9)}
+  .cake-scene{min-height:280px}
 }
 </style>
 </head>
@@ -355,26 +364,26 @@ canvas{
 
 <div class="container">
 
-  <div class="top">A SPECIAL DAY • A NEW CHAPTER</div>
+  <div class="top">ថ្ងៃពិសេស • ជំពូកថ្មីនៃជីវិត</div>
 
   <h1>HAPPY BIRTHDAY</h1>
-  <div class="subtitle">TO ME 🎂</div>
+  <div class="subtitle">រីករាយថ្ងៃកំណើត ជូនចំពោះខ្ញុំ 🎂</div>
 
   <div class="date">01 • 01 • 2027</div>
 
   <div class="card">
-    <h2>🎆 Birthday Countdown 🎆</h2>
-    <p>Counting down to my special day!</p>
+    <h2>🎆 រាប់ថយក្រោយដល់ថ្ងៃកំណើត 🎆</h2>
+    <p>នៅសល់ពេលប៉ុន្មានទៀតដល់ថ្ងៃពិសេសរបស់ខ្ញុំ</p>
 
     <div class="countdown">
-      <div class="time"><strong id="days">0</strong><span>DAYS</span></div>
-      <div class="time"><strong id="hours">0</strong><span>HOURS</span></div>
-      <div class="time"><strong id="minutes">0</strong><span>MINUTES</span></div>
-      <div class="time"><strong id="seconds">0</strong><span>SECONDS</span></div>
+      <div class="time"><strong id="days">0</strong><span>ថ្ងៃ</span></div>
+      <div class="time"><strong id="hours">0</strong><span>ម៉ោង</span></div>
+      <div class="time"><strong id="minutes">0</strong><span>នាទី</span></div>
+      <div class="time"><strong id="seconds">0</strong><span>វិនាទី</span></div>
     </div>
   </div>
 
-  <h2>🎁 Birthday Gifts 🎁</h2>
+  <h2>🎁 កាដូខួបកំណើត 🎁</h2>
   <div class="gifts">
     <div class="gift"><div class="bow"></div></div>
     <div class="gift black"><div class="bow"></div></div>
@@ -382,52 +391,56 @@ canvas{
   </div>
 
   <div class="card">
-    <h2>🎂 My Birthday Cake</h2>
+    <h2>🎂 នំខួបកំណើតរបស់ខ្ញុំ</h2>
     <div class="cake-scene">
       <div class="cake">
         <div class="plate"></div>
-        <div class="bottom-body"></div>
-        <div class="bottom-top"></div>
-        <div class="gold-band"></div>
-        <div class="cream"></div>
-        <div class="cream c2"></div>
-        <div class="cream c3"></div>
-        <div class="cream c4"></div>
-        <div class="top-body"></div>
-        <div class="top-top"></div>
-        <div class="gold-band small"></div>
-        <div class="top-cream">
-          <span></span><span></span><span></span><span></span>
+
+        <div class="lower"></div>
+        <div class="lower-top"></div>
+        <div class="lower-drip">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
         </div>
+        <div class="lower-band"></div>
+
+        <div class="upper"></div>
+        <div class="upper-top"></div>
+        <div class="upper-drip">
+          <span></span><span></span><span></span>
+          <span></span><span></span>
+        </div>
+        <div class="upper-band"></div>
+
         <div class="berry"></div>
         <div class="cake-label">HAPPY BIRTHDAY</div>
       </div>
     </div>
-    <div class="cake-caption">A SPECIAL CAKE FOR A SPECIAL DAY</div>
+    <div class="cake-caption">នំពិសេសសម្រាប់ថ្ងៃពិសេសរបស់ខ្ញុំ ❤️</div>
   </div>
 
   <div class="card">
-    <h2>🎁 Birthday Gift QR</h2>
-    <p>Scan the QR code for my birthday gift.</p>
+    <h2>🎁 QR កាដូខួបកំណើត</h2>
+    <p>ស្កេន QR Code សម្រាប់កាដូថ្ងៃកំណើត</p>
     <img class="qr" src="qr.png" alt="Birthday Gift QR Code">
     <p style="color:#aaa;font-size:12px">
-      Add your QR image as qr.png in the repository.
+      សូមបន្ថែមរូប QR ឈ្មោះ qr.png ទៅក្នុង Repository
     </p>
   </div>
 
   <div class="card">
-    <h2>💌 Birthday Wishes</h2>
-    <p>Write a special birthday message for me!</p>
+    <h2>💌 ពាក្យជូនពរថ្ងៃកំណើត</h2>
+    <p>សរសេរពាក្យជូនពរពិសេសមកខ្ញុំទីនេះ</p>
 
-    <textarea id="wish" placeholder="Write your birthday wishes here..."></textarea>
+    <textarea id="wish" placeholder="សូមសរសេរពាក្យជូនពររបស់អ្នក..."></textarea>
     <br>
-    <button onclick="showWish()">Send Birthday Wish ✨</button>
+    <button onclick="showWish()">ផ្ញើពាក្យជូនពរ ✨</button>
 
     <div id="wishResult"></div>
   </div>
 
   <footer>
-    MADE WITH ❤️ • MY BIRTHDAY 2027
+    បង្កើតដោយ ❤️ • MY BIRTHDAY 2027
   </footer>
 
 </div>
@@ -440,7 +453,7 @@ function updateCountdown(){
 
   if(distance <= 0){
     document.querySelector(".countdown").innerHTML =
-      "<h2 style='grid-column:1/-1'>🎉 HAPPY BIRTHDAY TO ME! 🎂</h2>";
+      "<h2 style='grid-column:1/-1'>🎉 រីករាយថ្ងៃកំណើត! 🎂</h2>";
     return;
   }
 
@@ -461,67 +474,3 @@ setInterval(updateCountdown,1000);
 
 function showWish(){
   const wish=document.getElementById("wish").value.trim();
-  if(!wish){
-    alert("Please write a birthday wish first!");
-    return;
-  }
-  document.getElementById("wishResult").textContent =
-    "✨ Your Birthday Wish ✨\n\n"+wish;
-}
-
-/* Fireworks */
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-let particles=[];
-
-function resize(){
-  canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight;
-}
-resize();
-window.addEventListener("resize",resize);
-
-function firework(){
-  const x=Math.random()*canvas.width;
-  const y=Math.random()*canvas.height*.55;
-  const colors=["#f6d77b","#ff334d","#ffffff","#d9a441"];
-
-  for(let i=0;i<35;i++){
-    const angle=Math.PI*2*i/35;
-    const speed=Math.random()*3+1;
-    particles.push({
-      x,y,
-      vx:Math.cos(angle)*speed,
-      vy:Math.sin(angle)*speed,
-      life:60,
-      color:colors[Math.floor(Math.random()*colors.length)]
-    });
-  }
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  particles.forEach(p=>{
-    p.x+=p.vx;
-    p.y+=p.vy;
-    p.vy+=.025;
-    p.life--;
-
-    ctx.globalAlpha=Math.max(p.life/60,0);
-    ctx.fillStyle=p.color;
-    ctx.fillRect(p.x,p.y,3,3);
-  });
-
-  particles=particles.filter(p=>p.life>0);
-  ctx.globalAlpha=1;
-  requestAnimationFrame(animate);
-}
-
-setInterval(firework,1200);
-animate();
-</script>
-
-</body>
-</html>
-
