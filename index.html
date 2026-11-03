@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,57 +8,69 @@
 
 <style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:radial-gradient(circle at top,#182238,#05070d 65%);
+  background:
+    radial-gradient(ellipse at 50% 0%,#25344d 0%,#101827 35%,#05070d 75%);
   color:white;
   text-align:center;
   overflow-x:hidden;
 }
 .container{
+  width:100%;
   max-width:850px;
   margin:auto;
   padding:35px 18px 60px;
+  position:relative;
+  z-index:2;
 }
 .top{
-  color:#d8b45c;
+  color:#e4c36d;
   letter-spacing:5px;
   font-size:12px;
 }
 h1{
   color:#f6d77b;
   font-size:clamp(35px,8vw,65px);
-  margin:18px 0 8px;
+  margin:20px 0 5px;
   text-shadow:0 0 25px #b58a35;
 }
 .subtitle{
-  color:#ddd;
-  font-size:17px;
+  color:#fff;
+  font-size:20px;
+  letter-spacing:5px;
 }
 .date{
   color:#f6d77b;
-  font-size:20px;
+  font-size:21px;
+  letter-spacing:4px;
   margin:25px 0;
 }
 .card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(246,215,123,.25);
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(246,215,123,.3);
   border-radius:20px;
   padding:25px 18px;
-  margin:25px 0;
+  margin:28px 0;
   box-shadow:0 10px 35px #0008;
+  backdrop-filter:blur(8px);
 }
-h2{color:#f6d77b}
+h2{
+  color:#f6d77b;
+  margin-top:5px;
+}
 .countdown{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
+  margin-top:20px;
 }
 .time{
   background:#101827;
   border:1px solid #b58a35;
-  border-radius:12px;
+  border-radius:13px;
   padding:15px 5px;
 }
 .time strong{
@@ -66,37 +79,38 @@ h2{color:#f6d77b}
   color:#f6d77b;
 }
 .time span{
-  font-size:12px;
+  font-size:11px;
   color:#bbb;
 }
 .gifts{
   display:flex;
   justify-content:center;
-  gap:22px;
+  align-items:flex-end;
+  gap:24px;
   flex-wrap:wrap;
-  margin:30px 0;
+  margin:45px 0 35px;
 }
 .gift{
-  width:95px;
-  height:85px;
+  width:88px;
+  height:78px;
   background:#a71925;
   position:relative;
   border-radius:5px;
-  box-shadow:0 8px 18px #0008;
+  box-shadow:0 8px 20px #0009;
 }
-.gift.black{background:#151515}
+.gift.black{background:#171717}
 .gift:before{
   content:"";
   position:absolute;
-  width:16px;
+  width:15px;
   height:100%;
   background:#e3bd62;
-  left:40px;
+  left:37px;
 }
 .gift:after{
   content:"";
   position:absolute;
-  height:15px;
+  height:13px;
   width:100%;
   background:#e3bd62;
   top:0;
@@ -104,60 +118,191 @@ h2{color:#f6d77b}
 }
 .bow{
   position:absolute;
-  width:28px;
-  height:20px;
+  width:25px;
+  height:19px;
   border:5px solid #e3bd62;
   border-radius:50%;
   top:-18px;
-  left:17px;
+  left:15px;
 }
 .bow:after{
   content:"";
   position:absolute;
-  width:28px;
-  height:20px;
+  width:25px;
+  height:19px;
   border:5px solid #e3bd62;
   border-radius:50%;
-  left:20px;
+  left:19px;
   top:-5px;
 }
-.cake{
-  margin:35px auto 15px;
-  width:190px;
-  height:100px;
-  position:relative;
+
+/* Birthday cake */
+.cake-scene{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px 0 10px;
+  min-height:300px;
+  perspective:900px;
 }
-.cake-top{
-  height:35px;
-  background:#fff;
-  border:4px solid #222;
-  border-radius:50%;
+.cake{
+  position:relative;
+  width:270px;
+  height:245px;
+  filter:drop-shadow(0 20px 18px #0009);
+  animation:cakeFloat 3s ease-in-out infinite;
+}
+@keyframes cakeFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+.plate{
   position:absolute;
-  top:0;
-  width:100%;
+  bottom:0;
+  left:0;
+  width:270px;
+  height:20px;
+  border-radius:50%;
+  background:linear-gradient(90deg,#80602c,#f7d982,#9b7537);
+  box-shadow:0 8px 20px #0008;
+}
+.bottom-body{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  width:240px;
+  height:105px;
+  border-radius:12px 12px 22px 22px;
+  background:linear-gradient(90deg,#171717,#353535 50%,#111);
+  border:2px solid #c6a04f;
+}
+.bottom-top{
+  position:absolute;
+  bottom:105px;
+  left:15px;
+  width:240px;
+  height:35px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#fff,#ddd);
+  border:2px solid #d5b76c;
   z-index:2;
 }
-.cake-body{
+.top-body{
   position:absolute;
-  top:17px;
+  bottom:120px;
+  left:50px;
+  width:170px;
+  height:80px;
+  border-radius:10px 10px 17px 17px;
+  background:linear-gradient(90deg,#e5e5e5,#fff 50%,#d8d8d8);
+  border:2px solid #d5b76c;
+}
+.top-top{
+  position:absolute;
+  bottom:185px;
+  left:50px;
+  width:170px;
+  height:30px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#fff,#e8e8e8);
+  border:2px solid #d5b76c;
+  z-index:3;
+}
+.gold-band{
+  position:absolute;
+  bottom:45px;
+  left:16px;
+  width:238px;
+  height:8px;
+  background:linear-gradient(90deg,#92702e,#f6d77b,#92702e);
+  z-index:4;
+}
+.gold-band.small{
+  bottom:140px;
+  left:51px;
+  width:168px;
+}
+.cream{
+  position:absolute;
+  width:22px;
+  height:25px;
+  background:#fff;
+  border-radius:0 0 50% 50%;
+  top:0;
+  left:20px;
+}
+.cream:before,.cream:after{
+  content:"";
+  position:absolute;
+  width:22px;
+  height:25px;
+  background:#fff;
+  border-radius:0 0 50% 50%;
+  top:0;
+}
+.cream:before{left:35px}
+.cream:after{left:70px}
+.cream.c2{left:105px}
+.cream.c3{left:175px}
+.cream.c4{left:215px}
+.top-cream{
+  position:absolute;
+  bottom:172px;
+  left:50px;
+  width:170px;
+  height:17px;
+  z-index:5;
+  display:flex;
+  justify-content:space-around;
+}
+.top-cream span{
+  width:22px;
+  height:25px;
+  background:#fff;
+  border-radius:0 0 50% 50%;
+}
+.berry{
+  position:absolute;
+  bottom:195px;
+  left:115px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#a71925;
+  box-shadow:22px 4px 0 #a71925,-22px 4px 0 #a71925;
+  z-index:6;
+}
+.cake-label{
+  position:absolute;
+  bottom:72px;
+  left:0;
   width:100%;
-  height:75px;
-  background:linear-gradient(#fff 0 45%,#171717 45% 100%);
-  border:3px solid #aaa;
-  border-radius:0 0 18px 18px;
+  z-index:6;
+  color:#f6d77b;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-shadow:0 2px 4px #000;
+}
+.cake-caption{
+  color:#e5c778;
+  font-size:13px;
+  letter-spacing:2px;
+  margin-top:5px;
 }
 .qr{
+  display:block;
   width:180px;
   height:180px;
   object-fit:contain;
   background:white;
   padding:8px;
   border-radius:12px;
-  margin:15px auto;
+  margin:18px auto;
 }
 textarea{
   width:100%;
-  min-height:110px;
+  min-height:115px;
   padding:14px;
   border-radius:12px;
   border:1px solid #b58a35;
@@ -166,6 +311,7 @@ textarea{
   font-size:15px;
   resize:vertical;
 }
+textarea::placeholder{color:#999}
 button{
   border:0;
   padding:13px 25px;
@@ -180,6 +326,7 @@ button{
 #wishResult{
   color:#f6d77b;
   white-space:pre-wrap;
+  overflow-wrap:anywhere;
   margin-top:18px;
 }
 footer{
@@ -198,6 +345,8 @@ canvas{
 @media(max-width:450px){
   .countdown{gap:5px}
   .time{padding:12px 2px}
+  .cake{transform:scale(.88)}
+  .cake-scene{min-height:270px}
 }
 </style>
 </head>
@@ -233,10 +382,29 @@ canvas{
     <div class="gift"><div class="bow"></div></div>
   </div>
 
-  <h2>🎂 Birthday Cake</h2>
-  <div class="cake">
-    <div class="cake-top"></div>
-    <div class="cake-body"></div>
+  <div class="card">
+    <h2>🎂 My Birthday Cake</h2>
+    <div class="cake-scene">
+      <div class="cake">
+        <div class="plate"></div>
+        <div class="bottom-body"></div>
+        <div class="bottom-top"></div>
+        <div class="gold-band"></div>
+        <div class="cream"></div>
+        <div class="cream c2"></div>
+        <div class="cream c3"></div>
+        <div class="cream c4"></div>
+        <div class="top-body"></div>
+        <div class="top-top"></div>
+        <div class="gold-band small"></div>
+        <div class="top-cream">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="berry"></div>
+        <div class="cake-label">HAPPY BIRTHDAY</div>
+      </div>
+    </div>
+    <div class="cake-caption">A SPECIAL CAKE FOR A SPECIAL DAY</div>
   </div>
 
   <div class="card">
@@ -244,7 +412,7 @@ canvas{
     <p>Scan the QR code for my birthday gift.</p>
     <img class="qr" src="qr.png" alt="Birthday Gift QR Code">
     <p style="color:#aaa;font-size:12px">
-      Replace qr.png with your own QR image.
+      Add your QR image as qr.png in the repository.
     </p>
   </div>
 
@@ -302,7 +470,7 @@ function showWish(){
     "✨ Your Birthday Wish ✨\n\n"+wish;
 }
 
-/* Fireworks animation */
+/* Fireworks */
 const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
 let particles=[];
@@ -335,7 +503,7 @@ function firework(){
 function animate(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  particles.forEach((p)=>{
+  particles.forEach(p=>{
     p.x+=p.vx;
     p.y+=p.vy;
     p.vy+=.025;
@@ -350,9 +518,11 @@ function animate(){
   ctx.globalAlpha=1;
   requestAnimationFrame(animate);
 }
+
 setInterval(firework,1200);
 animate();
 </script>
 
 </body>
 </html>
+
