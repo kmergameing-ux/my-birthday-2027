@@ -4,516 +4,348 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Birthday Surprise 2027 🎂</title>
+<title>Happy Birthday 2027</title>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:Arial,"Noto Sans Khmer",sans-serif;
-  background:radial-gradient(ellipse at top,#25344d,#101827 40%,#05070d 85%);
-  color:white;
-  text-align:center;
-  overflow-x:hidden;
+* {
+  box-sizing: border-box;
 }
 
-.container{
-  max-width:850px;
-  margin:auto;
-  padding:35px 18px 60px;
-  position:relative;
-  z-index:2;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080b16;
+  color: white;
+  text-align: center;
 }
 
-.top{
-  color:#e4c36d;
-  letter-spacing:4px;
-  font-size:12px;
-}
-
-h1{
-  color:#f6d77b;
-  font-size:clamp(34px,8vw,65px);
-  margin:20px 0 8px;
-  text-shadow:0 0 25px #b58a35;
-}
-
-.subtitle{
-  color:#fff;
-  font-size:20px;
-  letter-spacing:3px;
-}
-
-.date{
-  color:#f6d77b;
-  font-size:21px;
-  letter-spacing:3px;
-  margin:25px 0;
-}
-
-.card{
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(246,215,123,.3);
-  border-radius:20px;
-  padding:25px 18px;
-  margin:28px 0;
-  box-shadow:0 10px 35px #0008;
-  backdrop-filter:blur(8px);
-}
-
-h2{
-  color:#f6d77b;
-  margin-top:5px;
-  font-size:21px;
-}
-
-p{line-height:1.8}
-
-/* COUNTDOWN */
-.countdown{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin-top:20px;
-}
-
-.time{
-  background:#101827;
-  border:1px solid #b58a35;
-  border-radius:13px;
-  padding:15px 5px;
-}
-
-.time strong{
-  display:block;
-  font-size:clamp(23px,6vw,36px);
-  color:#f6d77b;
-}
-
-.time span{
-  font-size:11px;
-  color:#bbb;
-}
-
-/* GIFTS */
-.gifts{
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  gap:24px;
-  flex-wrap:wrap;
-  margin:45px 0 35px;
-}
-
-.gift{
-  width:88px;
-  height:78px;
-  background:#a71925;
-  position:relative;
-  border-radius:5px;
-  box-shadow:0 8px 20px #0009;
-}
-
-.gift.black{background:#171717}
-
-.gift:before{
-  content:"";
-  position:absolute;
-  width:15px;
-  height:100%;
-  background:#e3bd62;
-  left:37px;
-}
-
-.gift:after{
-  content:"";
-  position:absolute;
-  height:13px;
-  width:100%;
-  background:#e3bd62;
-  top:0;
-  left:0;
-}
-
-.bow{
-  position:absolute;
-  width:25px;
-  height:19px;
-  border:5px solid #e3bd62;
-  border-radius:50%;
-  top:-18px;
-  left:15px;
-}
-
-.bow:after{
-  content:"";
-  position:absolute;
-  width:25px;
-  height:19px;
-  border:5px solid #e3bd62;
-  border-radius:50%;
-  left:19px;
-  top:-5px;
-}
-
-/* REAL CAKE */
-.cake-scene{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:10px 0;
-  width:100%;
-}
-
-.cake-photo{
-  display:block;
-  width:100%;
-  max-width:480px;
-  height:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 15px 18px #0009);
-  animation:cakeFloat 3s ease-in-out infinite;
-}
-
-@keyframes cakeFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-7px)}
-}
-
-.cake-caption{
-  color:#e5c778;
-  font-size:14px;
-}
-
-/* QR */
-.qr{
-  display:block;
-  width:180px;
-  height:180px;
-  object-fit:contain;
-  background:white;
-  padding:8px;
-  border-radius:12px;
-  margin:18px auto;
-}
-
-/* WISH */
-textarea{
-  width:100%;
-  min-height:115px;
-  padding:14px;
-  border-radius:12px;
-  border:1px solid #b58a35;
-  background:#0d1421;
-  color:white;
-  font-size:15px;
-  resize:vertical;
-}
-
-textarea::placeholder{color:#aaa}
-
-button{
-  border:0;
-  padding:13px 25px;
-  border-radius:30px;
-  background:linear-gradient(90deg,#a71925,#d5a83e);
-  color:white;
-  font-size:15px;
-  font-weight:bold;
-  margin-top:13px;
-  cursor:pointer;
-}
-
-#wishResult{
-  color:#f6d77b;
-  white-space:pre-wrap;
-  overflow-wrap:anywhere;
-  margin-top:18px;
-}
-
-footer{
-  color:#aaa;
-  font-size:12px;
-  margin-top:40px;
+.hidden {
+  display: none !important;
 }
 
 /* ENVELOPE SCREEN */
-.envelope-screen{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:radial-gradient(ellipse at top,#25344d,#101827 45%,#05070d);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  padding:20px;
-  transition:opacity .7s ease, visibility .7s ease;
+#envelopeScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: radial-gradient(circle, #25213b, #080b16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.envelope-screen.hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+.envelope {
+  font-size: 110px;
+  animation: float 2s infinite ease-in-out;
 }
 
-.envelope{
-  font-size:115px;
-  cursor:pointer;
-  animation:envelopeFloat 2s ease-in-out infinite;
-  filter:drop-shadow(0 10px 20px #0009);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-@keyframes envelopeFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
+.open-btn {
+  margin-top: 25px;
+  padding: 14px 35px;
+  border: 1px solid #ffd700;
+  border-radius: 30px;
+  background: #d4a900;
+  color: #111;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.envelope-screen h2{
-  color:#f6d77b;
-  margin-top:15px;
+/* MAIN PAGE */
+header {
+  padding: 55px 15px 25px;
 }
 
-.envelope-screen p{
-  color:#eee;
+h1 {
+  color: #ffd700;
+  font-size: clamp(30px, 7vw, 55px);
+  text-shadow: 0 0 18px #d4a900;
 }
 
-.envelope-button{
-  background:linear-gradient(90deg,#a71925,#d5a83e);
-  padding:13px 28px;
-  border-radius:30px;
-  color:white;
-  border:0;
-  font-weight:bold;
-  font-size:15px;
-  margin-top:15px;
-  cursor:pointer;
+.subtitle {
+  color: #ddd;
+  font-size: 17px;
 }
 
-.music-status{
-  color:#e5c778;
-  font-size:13px;
-  margin-top:15px;
+section {
+  padding: 25px 15px;
+  margin: 15px auto;
+  max-width: 850px;
 }
 
-/* MOBILE */
-@media(max-width:450px){
-  .countdown{gap:5px}
-  .time{padding:12px 2px}
-  .cake-photo{max-width:100%}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #171c2e;
+  border: 1px solid #b99632;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 75px;
+}
+
+.time-box span {
+  display: block;
+  color: #ffd700;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.time-box small {
+  color: #ccc;
+}
+
+/* GIFTS */
+.gifts {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  font-size: 65px;
+}
+
+/* CAKE */
+.cake-img {
+  width: min(85%, 380px);
+  height: auto;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+/* QR */
+.qr-img {
+  width: 220px;
+  max-width: 80%;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* WISH */
+textarea {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d4a900;
+  background: #171c2e;
+  color: white;
+  font-size: 16px;
+}
+
+.action-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #d4a900;
+  color: #111;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#wishResult {
+  color: #ffd700;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  padding: 30px 10px;
+  color: #888;
+}
+
+/* FIREWORKS */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ENVELOPE INTRO -->
-<div class="envelope-screen" id="envelopeScreen">
-
-  <div class="envelope" onclick="openEnvelope()">💌</div>
-
-  <h2>មានសំបុត្រពិសេសមួយសម្រាប់អ្នក</h2>
-
-  <p>ចុចបើកស្រោមសំបុត្រដើម្បីចូលរួមថ្ងៃពិសេស ❤️</p>
-
-  <button class="envelope-button" onclick="openEnvelope()">
+<!-- ENVELOPE -->
+<div id="envelopeScreen">
+  <div class="envelope">💌</div>
+  <h2 style="color:#ffd700;">មានសំបុត្រពិសេសមួយសម្រាប់អ្នក!</h2>
+  <p>ចុចប៊ូតុងខាងក្រោមដើម្បីបើកសំបុត្រ</p>
+  <button class="open-btn" onclick="openEnvelope()">
     បើកសំបុត្រ 💌
   </button>
-
-  <div class="music-status">
-    🎵 មានបទចម្រៀងពិសេសរង់ចាំអ្នក
-  </div>
-
 </div>
 
-<!-- BACKGROUND MUSIC -->
+<!-- MUSIC -->
 <audio id="birthdayMusic" src="music.mp3" loop preload="auto"></audio>
 
 <canvas id="fireworks"></canvas>
 
-<div class="container">
+<!-- MAIN BIRTHDAY PAGE -->
+<main>
 
-  <div class="top">ថ្ងៃពិសេស • ជំពូកថ្មីនៃជីវិត</div>
+<header>
+  <h1>HAPPY BIRTHDAY 🎂</h1>
+  <p class="subtitle">🎉 រីករាយថ្ងៃកំណើត និងសួស្តីឆ្នាំថ្មី 2027 🎉</p>
+  <h2 style="color:#ffd700;">01 • 01 • 2027</h2>
+</header>
 
-  <h1>HAPPY BIRTHDAY</h1>
+<section>
+  <h2>⏳ COUNTDOWN</h2>
 
-  <div class="subtitle">
-    រីករាយថ្ងៃកំណើត ជូនចំពោះខ្ញុំ 🎂
-  </div>
+  <div class="countdown">
+    <div class="time-box">
+      <span id="days">0</span>
+      <small>Days</small>
+    </div>
 
-  <div class="date">01 • 01 • 2027</div>
+    <div class="time-box">
+      <span id="hours">0</span>
+      <small>Hours</small>
+    </div>
 
-  <!-- COUNTDOWN -->
-  <div class="card">
+    <div class="time-box">
+      <span id="minutes">0</span>
+      <small>Minutes</small>
+    </div>
 
-    <h2>🎆 រាប់ថយក្រោយដល់ថ្ងៃកំណើត 🎆</h2>
-
-    <p>នៅសល់ពេលប៉ុន្មានទៀតដល់ថ្ងៃពិសេសរបស់ខ្ញុំ</p>
-
-    <div class="countdown" id="countdown">
-
-      <div class="time">
-        <strong id="days">0</strong>
-        <span>ថ្ងៃ</span>
-      </div>
-
-      <div class="time">
-        <strong id="hours">0</strong>
-        <span>ម៉ោង</span>
-      </div>
-
-      <div class="time">
-        <strong id="minutes">0</strong>
-        <span>នាទី</span>
-      </div>
-
-      <div class="time">
-        <strong id="seconds">0</strong>
-        <span>វិនាទី</span>
-      </div>
-
+    <div class="time-box">
+      <span id="seconds">0</span>
+      <small>Seconds</small>
     </div>
   </div>
+</section>
 
-  <!-- GIFTS -->
-  <h2>🎁 កាដូខួបកំណើត 🎁</h2>
+<section>
+  <h2 style="color:#ffd700;">🎁 SPECIAL GIFTS 🎁</h2>
 
   <div class="gifts">
-    <div class="gift"><div class="bow"></div></div>
-    <div class="gift black"><div class="bow"></div></div>
-    <div class="gift"><div class="bow"></div></div>
+    <span>🎁</span>
+    <span>🎀</span>
+    <span>🎁</span>
   </div>
+</section>
 
-  <!-- CAKE -->
-  <div class="card">
+<section>
+  <h2 style="color:#ffd700;">🎂 BIRTHDAY CAKE</h2>
 
-    <h2>🎂 នំខួបកំណើតរបស់ខ្ញុំ</h2>
+  <img
+    class="cake-img"
+    src="cake.png"
+    alt="Birthday Cake"
+  >
 
-    <div class="cake-scene">
-      <img
-        class="cake-photo"
-        src="cake.png"
-        alt="Birthday Cake"
-      >
-    </div>
+  <p>សូមឱ្យថ្ងៃពិសេសនេះពោរពេញដោយសុភមង្គល ❤️</p>
+</section>
 
-    <div class="cake-caption">
-      នំពិសេសសម្រាប់ថ្ងៃពិសេសរបស់ខ្ញុំ ❤️
-    </div>
+<section>
+  <h2 style="color:#ffd700;">💛 BIRTHDAY WISH</h2>
 
-  </div>
+  <textarea
+    id="wish"
+    placeholder="សរសេរពាក្យជូនពរនៅទីនេះ..."
+  ></textarea>
 
-  <!-- ABA QR -->
-  <div class="card">
+  <button class="action-btn" onclick="showWish()">
+    ផ្ញើពាក្យជូនពរ 💌
+  </button>
 
-    <h2>🎁 QR កាដូខួបកំណើត</h2>
+  <p id="wishResult"></p>
+</section>
 
-    <p>ស្កេន QR Code សម្រាប់កាដូថ្ងៃកំណើត</p>
+<section>
+  <h2 style="color:#ffd700;">💝 SUPPORT / QR CODE</h2>
 
-    <img class="qr" src="qr.png" alt="ABA KHQR">
+  <img
+    class="qr-img"
+    src="qr.png"
+    alt="QR Code"
+  >
 
-    <p style="color:#aaa;font-size:12px">
-      ABA KHQR • Birthday Gift
-    </p>
+  <p>ស្កេន QR Code ដើម្បីផ្ញើការគាំទ្រ ❤️</p>
+</section>
 
-  </div>
+<footer>
+  <p>© 2027 • HAPPY BIRTHDAY 🎉</p>
+</footer>
 
-  <!-- WISH -->
-  <div class="card">
-
-    <h2>💌 ពាក្យជូនពរថ្ងៃកំណើត</h2>
-
-    <p>សរសេរពាក្យជូនពរពិសេសមកខ្ញុំទីនេះ</p>
-
-    <textarea
-      id="wish"
-      placeholder="សូមសរសេរពាក្យជូនពររបស់អ្នក..."
-    ></textarea>
-
-    <br>
-
-    <button onclick="showWish()">
-      ផ្ញើពាក្យជូនពរ ✨
-    </button>
-
-    <div id="wishResult"></div>
-
-  </div>
-
-  <footer>
-    បង្កើតដោយ ❤️ • MY BIRTHDAY 2027
-  </footer>
-
-</div>
+</main>
 
 <script>
 
-/* COUNTDOWN */
-const birthdayTarget =
-  new Date("2027-01-01T00:00:00+07:00").getTime();
-
-function updateCountdown(){
-
-  const distance = birthdayTarget - Date.now();
-
-  if(distance <= 0){
-
-    document.getElementById("countdown").innerHTML =
-      "<h2 style='grid-column:1/-1'>🎉 រីករាយថ្ងៃកំណើត! 🎂</h2>";
-
-    clearInterval(countdownTimer);
-    return;
-  }
-
-  const days = Math.floor(distance / 86400000);
-
-  const hours = Math.floor(
-    (distance % 86400000) / 3600000
-  );
-
-  const minutes = Math.floor(
-    (distance % 3600000) / 60000
-  );
-
-  const seconds = Math.floor(
-    (distance % 60000) / 1000
-  );
-
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
-}
-
-updateCountdown();
-
-const countdownTimer = setInterval(updateCountdown,1000);
-
-
-/* OPEN ENVELOPE + PLAY MUSIC */
-function openEnvelope(){
+/* OPEN ENVELOPE AND PLAY MUSIC */
+function openEnvelope() {
 
   const screen = document.getElementById("envelopeScreen");
   const music = document.getElementById("birthdayMusic");
 
-  screen.classList.add("hidden");
+  music.volume = 1;
 
-  music.play().catch(function(error){
-    alert("មិនអាចចាក់បទចម្រៀងបានទេ។ សូមពិនិត្យឯកសារ music.mp3");
-  });
+  music.play()
+    .then(function() {
+      screen.classList.add("hidden");
+    })
+    .catch(function(error) {
+      alert("មិនអាចចាក់បទចម្រៀងបានទេ: " + error.message);
+      screen.classList.add("hidden");
+    });
 
 }
 
+/* COUNTDOWN */
+function updateCountdown() {
+
+  const target = new Date(
+    "2027-01-01T00:00:00+07:00"
+  ).getTime();
+
+  const now = Date.now();
+  const distance = target - now;
+
+  if (distance <= 0) {
+    document.querySelector(".countdown").innerHTML =
+      "<h2>🎉 រីករាយថ្ងៃកំណើត! 🎂</h2>";
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(distance / 86400000);
+
+  document.getElementById("hours").textContent =
+    Math.floor((distance % 86400000) / 3600000);
+
+  document.getElementById("minutes").textContent =
+    Math.floor((distance % 3600000) / 60000);
+
+  document.getElementById("seconds").textContent =
+    Math.floor((distance % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 
 /* BIRTHDAY WISH */
-function showWish(){
+function showWish() {
 
   const wish = document.getElementById("wish").value.trim();
   const result = document.getElementById("wishResult");
 
-  if(!wish){
+  if (!wish) {
     alert("សូមសរសេរពាក្យជូនពរជាមុន!");
     return;
   }
@@ -524,7 +356,72 @@ function showWish(){
 
 }
 
+
+/* SIMPLE FIREWORKS */
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function createFirework() {
+
+  const x = Math.random() * canvas.width;
+  const y = Math.random() * canvas.height * 0.6;
+
+  for (let i = 0; i < 35; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 3 + 1;
+
+    particles.push({
+      x: x,
+      y: y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 50,
+      color: ["#ffd700", "#ff5555", "#55ccff"][
+        Math.floor(Math.random() * 3)
+      ]
+    });
+  }
+}
+
+function animateFireworks() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(function(p) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life--;
+
+    ctx.globalAlpha = Math.max(0, p.life / 50);
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  particles = particles.filter(function(p) {
+    return p.life > 0;
+  });
+
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animateFireworks);
+}
+
+setInterval(createFirework, 1500);
+animateFireworks();
+
 </script>
 
 </body>
 </html>
+
